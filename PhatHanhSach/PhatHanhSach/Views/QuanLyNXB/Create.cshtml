@@ -1,27 +1,24 @@
-﻿@model PhatHanhSach.Models.DAILY
+﻿@model PhatHanhSach.Models.NHAXUATBAN
 
 @{
     ViewBag.Title = "Create";
     Layout = "~/Views/Layout/AdminLayout.cshtml";
 }
 
-
 <div class="row">
     <div class="col-lg-12">
-        <h1 class="page-header">Thêm Đại Lý</h1>
+        <h1 class="page-header">Thêm Nhà Xuất Bản</h1>
     </div>
 </div>
-
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Ten, new { @class = "control-label col-md-2",  })
+            @Html.LabelFor(model => model.Ten, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Ten)
                 @Html.ValidationMessageFor(model => model.Ten)
@@ -41,6 +38,14 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.SoDT)
                 @Html.ValidationMessageFor(model => model.SoDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoTK, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoTK)
+                @Html.ValidationMessageFor(model => model.SoTK)
             </div>
         </div>
 

@@ -337,8 +337,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Layout\AdminLayout.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\QuanLyNXB\Index.cshtml" />
-    <Content Include="Views\QuanLyNXB\ThemNXB.cshtml" />
     <Content Include="Views\NhapSach\NhapSach.cshtml" />
     <Content Include="Views\NhapSach\Index.cshtml" />
     <Content Include="Views\NhapSach\CT_PhieuNhap.cshtml" />
@@ -347,6 +345,11 @@
     <Content Include="Views\QuanLyDL\Details.cshtml" />
     <Content Include="Views\QuanLyDL\Edit.cshtml" />
     <Content Include="Views\QuanLyDL\Index.cshtml" />
+    <Content Include="Views\QuanLyNXB\Create.cshtml" />
+    <Content Include="Views\QuanLyNXB\Delete.cshtml" />
+    <Content Include="Views\QuanLyNXB\Details.cshtml" />
+    <Content Include="Views\QuanLyNXB\Edit.cshtml" />
+    <Content Include="Views\QuanLyNXB\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

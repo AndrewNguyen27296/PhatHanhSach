@@ -160,6 +160,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\NhapSachController.cs" />
+    <Compile Include="Controllers\QuanLyDLController.cs" />
     <Compile Include="Controllers\QuanLyNXBController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -341,6 +342,11 @@
     <Content Include="Views\NhapSach\NhapSach.cshtml" />
     <Content Include="Views\NhapSach\Index.cshtml" />
     <Content Include="Views\NhapSach\CT_PhieuNhap.cshtml" />
+    <Content Include="Views\QuanLyDL\Create.cshtml" />
+    <Content Include="Views\QuanLyDL\Delete.cshtml" />
+    <Content Include="Views\QuanLyDL\Details.cshtml" />
+    <Content Include="Views\QuanLyDL\Edit.cshtml" />
+    <Content Include="Views\QuanLyDL\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

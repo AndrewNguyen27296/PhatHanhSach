@@ -1,0 +1,64 @@
+﻿@model PhatHanhSach.Models.DAILY
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Sửa Đại Lý</h1>
+    </div>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.MaDL)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ten, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ten)
+                @Html.ValidationMessageFor(model => model.Ten)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DiaChi, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DiaChi)
+                @Html.ValidationMessageFor(model => model.DiaChi)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.SoDT, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.SoDT)
+                @Html.ValidationMessageFor(model => model.SoDT)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TrangThai, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TrangThai)
+                @Html.ValidationMessageFor(model => model.TrangThai)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Lưu" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Trở về danh sách", "Index")
+</div>

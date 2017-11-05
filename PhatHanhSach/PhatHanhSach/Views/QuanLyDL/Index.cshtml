@@ -1,0 +1,56 @@
+﻿@model IEnumerable<PhatHanhSach.Models.DAILY>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Quản lý Đại Lý</h1>
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>
+            Tên
+        </th>
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+            Số ĐT
+        </th>
+        <th>
+            Trạng Thái
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DiaChi)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoDT)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaDL }) |
+                @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDL }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaDL })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<input type="button" class="btn btn-primary" value="Thêm Đại Lý" onclick="location.href='@Url.Action("Create","QuanLyDL")'" />

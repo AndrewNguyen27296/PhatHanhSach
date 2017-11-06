@@ -162,6 +162,7 @@
     <Compile Include="Controllers\NhapSachController.cs" />
     <Compile Include="Controllers\QuanLyDLController.cs" />
     <Compile Include="Controllers\QuanLyNXBController.cs" />
+    <Compile Include="Controllers\QuanLySachController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -350,6 +351,11 @@
     <Content Include="Views\QuanLyNXB\Details.cshtml" />
     <Content Include="Views\QuanLyNXB\Edit.cshtml" />
     <Content Include="Views\QuanLyNXB\Index.cshtml" />
+    <Content Include="Views\QuanLySach\Create.cshtml" />
+    <Content Include="Views\QuanLySach\Delete.cshtml" />
+    <Content Include="Views\QuanLySach\Details.cshtml" />
+    <Content Include="Views\QuanLySach\Edit.cshtml" />
+    <Content Include="Views\QuanLySach\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

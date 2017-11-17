@@ -10,15 +10,10 @@
 namespace PhatHanhSach.Models
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class TONKHO
+    public partial class sp_helpdiagramdefinition_Result
     {
-        public int MaSach { get; set; }
-        public System.DateTime ThoiGian { get; set; }
-        public Nullable<int> SLTon { get; set; }
-        public Nullable<int> TangGiam { get; set; }
-    
-        public virtual SACH SACH { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

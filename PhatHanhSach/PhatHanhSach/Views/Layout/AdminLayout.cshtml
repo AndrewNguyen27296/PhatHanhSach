@@ -40,10 +40,10 @@
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">Phát Hành Sách</a>
-            </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Phát Hành Sách</a>
+                </div>
 
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -103,7 +103,6 @@
             <!-- Sidebar -->
             <div class="navbar-default sidebar" role="navigation">
                 <div class="sidebar-nav navbar-collapse">
-
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
                             <div class="input-group custom-search-form">
@@ -137,14 +136,20 @@
                             </a>
                         </li>
 
-                        <!-- Chức năng Nhập Sách-->
+                        <!-- Chức năng Nhập-->
                         <li class="">
                             <a href="@Url.Action("Index","NhapSach")">
-                                <i class="fa fa-building "></i><span class="link-title">Nhập Sách </span>
+                                <i class="fa fa-building "></i><span class="link-title">Quản lý Nhập </span>
+                            </a>
+                        </li>
+
+                        <!-- Chức năng Xuất-->
+                        <li class="">
+                            <a href="@Url.Action("Index","XuatSach")">
+                                <i class="fa fa-building "></i><span class="link-title">Quản lý Xuất </span>
                             </a>
                         </li>
                     </ul>
-
                 </div>
             </div>
         </nav>

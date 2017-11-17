@@ -20,7 +20,7 @@ namespace PhatHanhSach.Controllers
             return View(db.DAILies.ToList());
         }
 
-        // GET: /QuanLyDL/Details/5
+        // GET: /QuanLyDL/Details/
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -42,8 +42,6 @@ namespace PhatHanhSach.Controllers
         }
 
         // POST: /QuanLyDL/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include="MaDL,Ten,DiaChi,SoDT,TrangThai")] DAILY daily)
@@ -58,7 +56,7 @@ namespace PhatHanhSach.Controllers
             return View(daily);
         }
 
-        // GET: /QuanLyDL/Edit/5
+        // GET: /QuanLyDL/Edit/
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,9 +71,7 @@ namespace PhatHanhSach.Controllers
             return View(daily);
         }
 
-        // POST: /QuanLyDL/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: /QuanLyDL/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="MaDL,Ten,DiaChi,SoDT,TrangThai")] DAILY daily)
@@ -89,7 +85,7 @@ namespace PhatHanhSach.Controllers
             return View(daily);
         }
 
-        // GET: /QuanLyDL/Delete/5
+        // GET: /QuanLyDL/Delete/
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +100,7 @@ namespace PhatHanhSach.Controllers
             return View(daily);
         }
 
-        // POST: /QuanLyDL/Delete/5
+        // POST: /QuanLyDL/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

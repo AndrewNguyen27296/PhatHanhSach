@@ -1,0 +1,60 @@
+﻿@using PhatHanhSach.Models
+@model PHIEUXUAT
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+    List<CT_PHIEUXUAT> list = ViewBag.DS_CTPhieuXuat as List<CT_PHIEUXUAT>;
+}
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
+      rel="Stylesheet" type="text/css" />
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Chi Tiết Phiếu Xuất</h1>
+    </div>
+</div>
+
+<div class="form-group col-md-12">
+    <div class="col-md-2" style="text-align: center">
+        <label class="control-label">Đại lý</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@Model.DAILY.Ten" class="form-control" disabled="disabled" />
+    </div>
+</div>
+
+<div class="form-group col-md-12">
+    <div class="col-md-2" style="text-align: center">
+        <label class="control-label">Ngày xuất</label>
+    </div>
+    <div class="col-md-4">
+        <input type="text" value="@Model.NgayXuat.Value.ToString("dd/MM/yyyy")" class="form-control" disabled="disabled" />
+    </div>
+</div>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Sách</th>
+        <th>Tên Sách</th>
+        <th>Giá xuất</th>
+        <th>Số Lượng</th>
+        <th>Thành Tiền</th>
+    </tr>
+    @foreach (CT_PHIEUXUAT s in ViewBag.DS_CTPhieuXuat as IEnumerable<CT_PHIEUXUAT>)
+    {
+        <tr>
+            <td>@s.MaSach</td>
+            <td>@s.SACH.TenSach</td>
+            <td>@s.DonGia.Value.ToString("#,##")</td>
+            <td>@s.SLXuat</td>
+            <td>@s.ThanhTien.Value.ToString("#,##")</td>
+        </tr>
+    }
+</table>
+<h2 style="float: right">Tổng tiền: @Model.TongTien.Value.ToString("#,##") VNĐ</h2>
+<div style="clear: both">
+    @Html.ActionLink("Trở về danh sách", "Index")
+</div>

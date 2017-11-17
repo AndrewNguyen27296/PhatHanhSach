@@ -163,6 +163,7 @@
     <Compile Include="Controllers\QuanLyDLController.cs" />
     <Compile Include="Controllers\QuanLyNXBController.cs" />
     <Compile Include="Controllers\QuanLySachController.cs" />
+    <Compile Include="Controllers\XuatSachController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -226,12 +227,23 @@
     <Compile Include="Models\SACH.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sp_helpdiagrams_Result.cs">
+      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\sysdiagram.cs">
+      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\TONKHO.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TONKHODL.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ViewModels\CT_PhieuXuatViewModel.cs" />
+    <Compile Include="Models\ViewModels\PhieuXuatViewModel.cs" />
     <Compile Include="Models\ViewModels\SachViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -284,6 +296,18 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="Content\composer.json" />
+    <Content Include="Content\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\fonts\FontAwesome.otf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <EntityDeploy Include="Models\PhatHanhSachModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>PhatHanhSachModel.Designer.cs</LastGenOutput>
@@ -301,18 +325,6 @@
       <DependentUpon>PhatHanhSachModel.edmx</DependentUpon>
       <LastGenOutput>PhatHanhSachModel.cs</LastGenOutput>
     </Content>
-    <Content Include="Content\composer.json" />
-    <Content Include="Content\fonts\fontawesome-webfont.eot" />
-    <Content Include="Content\fonts\fontawesome-webfont.svg" />
-    <Content Include="Content\fonts\fontawesome-webfont.ttf" />
-    <Content Include="Content\fonts\fontawesome-webfont.woff" />
-    <Content Include="Content\fonts\fontawesome-webfont.woff2" />
-    <Content Include="Content\fonts\FontAwesome.otf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -356,6 +368,9 @@
     <Content Include="Views\QuanLySach\Details.cshtml" />
     <Content Include="Views\QuanLySach\Edit.cshtml" />
     <Content Include="Views\QuanLySach\Index.cshtml" />
+    <Content Include="Views\XuatSach\Index.cshtml" />
+    <Content Include="Views\XuatSach\Details.cshtml" />
+    <Content Include="Views\XuatSach\XuatSach.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

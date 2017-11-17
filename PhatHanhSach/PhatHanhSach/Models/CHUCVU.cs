@@ -14,6 +14,7 @@ namespace PhatHanhSach.Models
     
     public partial class CHUCVU
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public CHUCVU()
         {
             this.NGUOIDUNGs = new HashSet<NGUOIDUNG>();
@@ -24,6 +25,7 @@ namespace PhatHanhSach.Models
         public string GhiChu { get; set; }
         public Nullable<bool> TrangThai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<NGUOIDUNG> NGUOIDUNGs { get; set; }
     }
 }

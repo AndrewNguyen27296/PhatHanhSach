@@ -14,6 +14,7 @@ namespace PhatHanhSach.Models
     
     public partial class DAILY
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DAILY()
         {
             this.BAOCAODLs = new HashSet<BAOCAODL>();
@@ -28,9 +29,13 @@ namespace PhatHanhSach.Models
         public string SoDT { get; set; }
         public Nullable<bool> TrangThai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<BAOCAODL> BAOCAODLs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CONGNO_DL> CONGNO_DL { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUXUAT> PHIEUXUATs { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TONKHODL> TONKHODLs { get; set; }
     }
 }

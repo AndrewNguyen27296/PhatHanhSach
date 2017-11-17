@@ -14,6 +14,7 @@ namespace PhatHanhSach.Models
     
     public partial class BAOCAODL
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public BAOCAODL()
         {
             this.CT_BAOCAODL = new HashSet<CT_BAOCAODL>();
@@ -26,6 +27,7 @@ namespace PhatHanhSach.Models
         public Nullable<bool> TrangThai { get; set; }
     
         public virtual DAILY DAILY { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_BAOCAODL> CT_BAOCAODL { get; set; }
     }
 }

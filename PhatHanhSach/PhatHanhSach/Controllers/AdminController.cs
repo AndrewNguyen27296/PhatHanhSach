@@ -8,7 +8,7 @@ namespace PhatHanhSach.Controllers
 {
     public class AdminController : Controller
     {
-        // GET: Admin
+        // GET: Views/Admin/Index
         public ActionResult Index()
         {
             return View();

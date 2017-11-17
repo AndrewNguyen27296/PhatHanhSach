@@ -22,7 +22,7 @@ namespace PhatHanhSach.Controllers
             return View(await saches.ToListAsync());
         }
 
-        // GET: /QuanLySach/Details/5
+        // GET: /QuanLySach/Details/
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -45,8 +45,6 @@ namespace PhatHanhSach.Controllers
         }
 
         // POST: /QuanLySach/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include="MaSach,MaNXB,TenSach,TacGia,LinhVuc,DonGiaNhap,DonGiaXuat,GhiChu,TrangThai")] SACH sach)
@@ -62,7 +60,7 @@ namespace PhatHanhSach.Controllers
             return View(sach);
         }
 
-        // GET: /QuanLySach/Edit/5
+        // GET: /QuanLySach/Edit/
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,9 +76,7 @@ namespace PhatHanhSach.Controllers
             return View(sach);
         }
 
-        // POST: /QuanLySach/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: /QuanLySach/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include="MaSach,MaNXB,TenSach,TacGia,LinhVuc,DonGiaNhap,DonGiaXuat,GhiChu,TrangThai")] SACH sach)
@@ -95,7 +91,7 @@ namespace PhatHanhSach.Controllers
             return View(sach);
         }
 
-        // GET: /QuanLySach/Delete/5
+        // GET: /QuanLySach/Delete/
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -110,7 +106,7 @@ namespace PhatHanhSach.Controllers
             return View(sach);
         }
 
-        // POST: /QuanLySach/Delete/5
+        // POST: /QuanLySach/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)

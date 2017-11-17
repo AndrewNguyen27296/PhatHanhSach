@@ -1,0 +1,50 @@
+﻿@using PhatHanhSach.Models
+@model IEnumerable<PHIEUXUAT>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Layout/AdminLayout.cshtml";
+}
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+<link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
+      rel="Stylesheet" type="text/css" />
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Quản lý Phiếu Xuất</h1>
+    </div>
+</div>
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>Mã Đại Lý</th>
+        <th>Tên Đại Lý</th>
+        <th>Ngày Xuất</th>
+        <th>Tổng Tiền</th>
+        <th>Trạng Thái</th>
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (PHIEUXUAT s in Model)
+    {
+        <tr>
+            <td>@s.MaDL</td>
+            <td>@s.DAILY.Ten</td>
+            <td>@s.NgayXuat.Value.ToString("dd/MM/yyyy")</td>
+            <td>@s.TongTien.Value.ToString("#,##") VNĐ</td>
+            @if (s.TrangThai == false)
+            {
+                <td>Chưa thanh toán</td>
+            }
+            else
+            {
+                <td>Đã thanh toán</td>
+            }
+            <td>@Html.ActionLink("Xem Chi Tiết", "XemChiTiet", new { @MaPX = s.MaPX })</td>
+            <td>@Html.ActionLink("Cập Nhật Trạng Thái", "CapNhatTrangThai", new { @MaPX = s.MaPX })</td>
+        </tr>
+    }
+</table>
+<input type="button" class="btn btn-primary" value="Thêm Phiếu Xuất" onclick="location.href='@Url.Action("XuatSach", "XuatSach")'" />

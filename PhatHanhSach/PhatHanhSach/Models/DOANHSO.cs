@@ -14,6 +14,7 @@ namespace PhatHanhSach.Models
     
     public partial class DOANHSO
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public DOANHSO()
         {
             this.CT_DOANHSO = new HashSet<CT_DOANHSO>();
@@ -25,6 +26,7 @@ namespace PhatHanhSach.Models
         public Nullable<int> ThanhToan { get; set; }
         public Nullable<bool> TrangThai { get; set; }
     
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_DOANHSO> CT_DOANHSO { get; set; }
         public virtual NHAXUATBAN NHAXUATBAN { get; set; }
     }

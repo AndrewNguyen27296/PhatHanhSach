@@ -21,7 +21,7 @@ namespace PhatHanhSach.Controllers
             return View(await db.NHAXUATBANs.ToListAsync());
         }
 
-        // GET: /QuanLyNXB/Details/5
+        // GET: /QuanLyNXB/Details/
         public async Task<ActionResult> Details(int? id)
         {
             if (id == null)
@@ -43,8 +43,6 @@ namespace PhatHanhSach.Controllers
         }
 
         // POST: /QuanLyNXB/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Create([Bind(Include="MaNXB,Ten,DiaChi,SoDT,SoTK,TrangThai")] NHAXUATBAN nhaxuatban)
@@ -59,7 +57,7 @@ namespace PhatHanhSach.Controllers
             return View(nhaxuatban);
         }
 
-        // GET: /QuanLyNXB/Edit/5
+        // GET: /QuanLyNXB/Edit/
         public async Task<ActionResult> Edit(int? id)
         {
             if (id == null)
@@ -74,9 +72,7 @@ namespace PhatHanhSach.Controllers
             return View(nhaxuatban);
         }
 
-        // POST: /QuanLyNXB/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        // POST: /QuanLyNXB/Edit/
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Edit([Bind(Include="MaNXB,Ten,DiaChi,SoDT,SoTK,TrangThai")] NHAXUATBAN nhaxuatban)
@@ -90,7 +86,7 @@ namespace PhatHanhSach.Controllers
             return View(nhaxuatban);
         }
 
-        // GET: /QuanLyNXB/Delete/5
+        // GET: /QuanLyNXB/Delete/
         public async Task<ActionResult> Delete(int? id)
         {
             if (id == null)
@@ -105,13 +101,13 @@ namespace PhatHanhSach.Controllers
             return View(nhaxuatban);
         }
 
-        // POST: /QuanLyNXB/Delete/5
+        // POST: /QuanLyNXB/Delete/
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> DeleteConfirmed(int id)
         {
-            NHAXUATBAN nhaxuatban = await db.NHAXUATBANs.FindAsync(id);
-            db.NHAXUATBANs.Remove(nhaxuatban);
+            PHIEUXUAT phieuxuat = await db.PHIEUXUATs.FindAsync(id);
+            db.PHIEUXUATs.Remove(phieuxuat);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }

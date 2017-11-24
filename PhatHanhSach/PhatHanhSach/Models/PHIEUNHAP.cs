@@ -21,7 +21,7 @@ namespace PhatHanhSach.Models
         }
     
         public int MaPN { get; set; }
-        public string NguoiGiao { get; set; }
+        public Nullable<int> NguoiGiao { get; set; }
         public Nullable<System.DateTime> NgayNhap { get; set; }
         public Nullable<int> MaNXB { get; set; }
         public Nullable<int> TongTien { get; set; }

@@ -21,7 +21,7 @@ namespace PhatHanhSach.Models
         }
     
         public int MaPX { get; set; }
-        public string NguoiNhan { get; set; }
+        public Nullable<int> NguoiNhan { get; set; }
         public Nullable<System.DateTime> NgayXuat { get; set; }
         public Nullable<int> MaDL { get; set; }
         public Nullable<int> TongTien { get; set; }

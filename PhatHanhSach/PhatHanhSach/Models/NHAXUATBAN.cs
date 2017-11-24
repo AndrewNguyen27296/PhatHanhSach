@@ -20,7 +20,6 @@ namespace PhatHanhSach.Models
             this.CONGNO_NXB = new HashSet<CONGNO_NXB>();
             this.DOANHSOes = new HashSet<DOANHSO>();
             this.PHIEUNHAPs = new HashSet<PHIEUNHAP>();
-            this.SACHes = new HashSet<SACH>();
         }
     
         public int MaNXB { get; set; }
@@ -36,7 +35,5 @@ namespace PhatHanhSach.Models
         public virtual ICollection<DOANHSO> DOANHSOes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUNHAP> PHIEUNHAPs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SACH> SACHes { get; set; }
     }
 }

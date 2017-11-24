@@ -20,7 +20,6 @@ namespace PhatHanhSach.Models
             this.BAOCAODLs = new HashSet<BAOCAODL>();
             this.CONGNO_DL = new HashSet<CONGNO_DL>();
             this.PHIEUXUATs = new HashSet<PHIEUXUAT>();
-            this.TONKHODLs = new HashSet<TONKHODL>();
         }
     
         public int MaDL { get; set; }
@@ -35,7 +34,5 @@ namespace PhatHanhSach.Models
         public virtual ICollection<CONGNO_DL> CONGNO_DL { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PHIEUXUAT> PHIEUXUATs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TONKHODL> TONKHODLs { get; set; }
     }
 }

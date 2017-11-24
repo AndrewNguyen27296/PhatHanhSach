@@ -22,17 +22,16 @@ namespace PhatHanhSach.Models
             this.CT_PHIEUNHAP = new HashSet<CT_PHIEUNHAP>();
             this.CT_PHIEUXUAT = new HashSet<CT_PHIEUXUAT>();
             this.TONKHOes = new HashSet<TONKHO>();
-            this.TONKHODLs = new HashSet<TONKHODL>();
         }
     
         public int MaSach { get; set; }
-        public int MaNXB { get; set; }
         public string TenSach { get; set; }
         public string TacGia { get; set; }
         public string LinhVuc { get; set; }
         public Nullable<int> DonGiaNhap { get; set; }
         public Nullable<int> DonGiaXuat { get; set; }
         public string GhiChu { get; set; }
+        public string HinhAnh { get; set; }
         public Nullable<bool> TrangThai { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -43,10 +42,7 @@ namespace PhatHanhSach.Models
         public virtual ICollection<CT_PHIEUNHAP> CT_PHIEUNHAP { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CT_PHIEUXUAT> CT_PHIEUXUAT { get; set; }
-        public virtual NHAXUATBAN NHAXUATBAN { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<TONKHO> TONKHOes { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<TONKHODL> TONKHODLs { get; set; }
     }
 }

@@ -159,18 +159,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\NhapSachController.cs" />
-    <Compile Include="Controllers\QuanLyDLController.cs" />
-    <Compile Include="Controllers\QuanLyNXBController.cs" />
-    <Compile Include="Controllers\QuanLySachController.cs" />
-    <Compile Include="Controllers\XuatSachController.cs" />
-    <Compile Include="Global.asax.cs">
-      <DependentUpon>Global.asax</DependentUpon>
-    </Compile>
+    <Compile Include="Controllers\BaoCaoDaiLyController.cs" />
+    <Compile Include="Controllers\DoanhThuController.cs" />
+    <Compile Include="Controllers\QuanLyCongNo_DLController.cs" />
+    <Compile Include="Controllers\QuanLyCongNo_NXBController.cs" />
     <Compile Include="Models\BAOCAODL.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\CHUCVU.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CONGNO_DL.cs">
@@ -197,9 +190,6 @@
     <Compile Include="Models\DOANHSO.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\NGUOIDUNG.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\NHAXUATBAN.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
@@ -224,23 +214,22 @@
     <Compile Include="Models\PHIEUXUAT.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Procedure.cs" />
     <Compile Include="Models\SACH.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sp_helpdiagrams_Result.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\sysdiagram.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\TONKHO.cs">
       <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\TONKHODL.cs">
-      <DependentUpon>PhatHanhSachModel.tt</DependentUpon>
+    <Compile Include="Models\ViewModels\CT_BaoCaoDaiLyViewModel.cs" />
+    <Compile Include="Controllers\NhapSachController.cs" />
+    <Compile Include="Controllers\QuanLyDLController.cs" />
+    <Compile Include="Controllers\QuanLyNXBController.cs" />
+    <Compile Include="Controllers\QuanLySachController.cs" />
+    <Compile Include="Controllers\TonKhoController.cs" />
+    <Compile Include="Controllers\XuatSachController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ViewModels\CT_PhieuXuatViewModel.cs" />
     <Compile Include="Models\ViewModels\PhieuXuatViewModel.cs" />
@@ -371,6 +360,17 @@
     <Content Include="Views\XuatSach\Index.cshtml" />
     <Content Include="Views\XuatSach\Details.cshtml" />
     <Content Include="Views\XuatSach\XuatSach.cshtml" />
+    <Content Include="Views\BaoCaoDaiLy\Index.cshtml" />
+    <Content Include="Views\BaoCaoDaiLy\ThemBaoCao.cshtml" />
+    <Content Include="Views\BaoCaoDaiLy\XemChiTiet.cshtml" />
+    <Content Include="Views\DoanhThu\Index.cshtml" />
+    <Content Include="Views\DoanhThu\ThongKe.cshtml" />
+    <Content Include="Views\DoanhThu\XemChiTiet.cshtml" />
+    <Content Include="Views\QuanLyCongNo_DL\CongNoDL.cshtml" />
+    <Content Include="Views\QuanLyCongNo_DL\Index.cshtml" />
+    <Content Include="Views\QuanLyCongNo_NXB\CongNoNXB.cshtml" />
+    <Content Include="Views\QuanLyCongNo_NXB\Index.cshtml" />
+    <Content Include="Views\TonKho\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

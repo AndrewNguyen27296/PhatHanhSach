@@ -12,12 +12,18 @@ namespace PhatHanhSach.Controllers
     {
         PhatHanhSachEntities entities = new PhatHanhSachEntities();
 
+        /**
+         * Hiện danh sách phiếu nhập ở trang Views/NhapSach/Index
+         */
         public ActionResult Index()
         {
             var list = entities.PHIEUNHAPs.ToList();
             return View(list);
         }
 
+        /**
+         * Hiện chi tiết của 1 phiếu nhập
+         */
         public ActionResult CT_PhieuNhap(int? MaPN)
         {
             var list = entities.CT_PHIEUNHAP.Where(n => n.MaPN == MaPN);
@@ -27,6 +33,9 @@ namespace PhatHanhSach.Controllers
             return View(model);
         }
 
+        /**
+         * Load NXB khi ở trang thêm phiếu nhập
+         */
         public ActionResult NhapSach()
         {
             NHAXUATBAN nxb = new NHAXUATBAN();
@@ -41,6 +50,9 @@ namespace PhatHanhSach.Controllers
             return View();
         }
 
+        /**
+         *Tự động nhắc tên sách có trong CSDL
+         */
         [HttpPost]
         public JsonResult AutoComplete(string prefix)
         {
@@ -56,7 +68,11 @@ namespace PhatHanhSach.Controllers
         }
 
 
-
+        /**
+         * Thêm các chi tiết phiếu nhập vào bảng (vào 1 session) 
+         * sử dụng SachViewModel vì trong sách không có NXB 
+         * Chỉ thêm vào bảng chưa lưu vào CSDL
+         */
         [HttpPost]
         public ActionResult ThemVaoBang(SachViewModel sachVM)
         {
@@ -78,6 +94,10 @@ namespace PhatHanhSach.Controllers
             }
         }
 
+
+        /**
+         * Xóa 1 phiếu nhập khỏi bảng 
+         */
         public ActionResult XoaKhoiBang(int MaSach)
         {
             // Xu ly code truy xuat sach
@@ -85,17 +105,15 @@ namespace PhatHanhSach.Controllers
             return RedirectToAction("NhapSach");
         }
 
+        /**
+         * Lưu bảng vào CSDL
+         */
         [HttpPost]
         public ActionResult LuuCSDL(SachViewModel sachVM)
         {
-            //if (sachVM.MaNXB == null)
-            //{
-            //    TempData["ErrorMessage2"] = "Vui Lòng Nhập Sách Trước";
-            //    return RedirectToAction("NhapSach");
-            //}
-            //else
-            //{
-
+                /**
+                 * Lưu Ngày nhập và NXB
+                 */
                 PHIEUNHAP pn = new PHIEUNHAP();
                 pn.NgayNhap = sachVM.NgayNhap;
                 pn.MaNXB = sachVM.MaNXB;
@@ -105,7 +123,10 @@ namespace PhatHanhSach.Controllers
                 entities.SaveChanges();
 
                 int tongTien = 0;
-
+                
+                /**
+                 * Lưu CT_Phiếu Nhập
+                 */
                 foreach (var ct in (List<SachViewModel>)Session["listSach"])
                 {
                     int thanhTien = ct.GiaNhap * ct.SLNhap;
@@ -121,9 +142,11 @@ namespace PhatHanhSach.Controllers
                     entities.CT_PHIEUNHAP.Add(ctpn);
                 }
 
+                /**
+                 * Update tồn kho
+                 */
                 foreach (var ton in (List<SachViewModel>)Session["listSach"])
                 {
-                    //Update ton kho
                     TONKHO tonkho = new TONKHO();
                     tonkho.MaSach = ton.MaSach;
                     tonkho.ThoiGian = sachVM.NgayNhap;
@@ -132,14 +155,16 @@ namespace PhatHanhSach.Controllers
                     entities.SaveChanges();
                 }
 
-                // Update tong tien 
+                /**
+                 * Update tổng tiền
+                 */
                 addedPN.TongTien = tongTien;
 
-                // Update cong no NXB
+                /**
+                 * Update công nợ NXB
+                 */
                 CONGNO_NXB cnNXB = new CONGNO_NXB();
                 cnNXB.MaNXB = sachVM.MaNXB;
-                //var query = "SELECT TienNo FROM CONGNO_NXB c WHERE ThoiGian = ( SELECT max(ThoiGian) from CONGNO_NXB c where c.MaNXB = " + cnNXB.MaNXB + ")";
-                //int latestDebt = Int32.Parse(query);
                 cnNXB.ThoiGian = sachVM.NgayNhap;
                 cnNXB.TienNo = tongTien;
                 cnNXB.TienDaTra = 0;
@@ -148,18 +173,15 @@ namespace PhatHanhSach.Controllers
 
                 Session.Clear();
                 return RedirectToAction("Index");
-            //}
         }
+
 
         [HttpPost]
         public ActionResult ThemPhieuNhap(PHIEUNHAP pn, CT_PHIEUNHAP ctpn)
         {
-            //Session["dsSach"] = new List<>();
             entities.CT_PHIEUNHAP.Add(ctpn);
-                entities.SaveChanges();
+            entities.SaveChanges();
             return RedirectToAction("Index", "NhapSach");
         }
-
-        //public JsonResult KiemTraSach()
     }
 }

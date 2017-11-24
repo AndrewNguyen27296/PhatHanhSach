@@ -1,5 +1,6 @@
 ﻿@model PhatHanhSach.Models.ViewModels.SachViewModel
 
+<!--Sử dụng AdminLayout-->
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Layout/AdminLayout.cshtml";
@@ -9,11 +10,15 @@
     string errorMessage = (string)TempData["ErrorMessage"];
     @*string errorMessage2 = (string)TempData["ErrorMessage2"];*@
 }
+
+<!--Thư viện jQuery-->
 <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
 <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
       rel="Stylesheet" type="text/css" />
+
+<!--Function autocomplete trong ô tìm kiếm-->
 <script type="text/javascript">
     $(function () {
         $("#TenSach").autocomplete({
@@ -44,13 +49,8 @@
         });
     });
 </script>
-@*<script type="text/javascript">
-    function fnValidate() {
-        if (document.getElementById("MaSach").value == '') {
-            alert('Khong duoc de trong o nhap.')
-        }
-    }
-</script>*@
+
+<!--Function thông báo không được để trống ô nhập-->
  <script>
      $(document).ready(function () {
          $('ThemVaoBang').click(function () {
@@ -65,18 +65,14 @@
      });
  </script>
 
-
-
-@*@section myCustomJS {
-    <script src="~/Content/assets/js/myCustomJS.js"></script>
-}*@
-
+<!--Body-->
     <body class="menu-affix">
         <div class="col-lg-12">
             <div class="box inverse">
                 <header>
                     <h5>1.Chi tiết Phiếu Nhập</h5>
                 </header>
+
                 <!-- Them Sach Vao Bang -->
                 <div id="div-1" class="body collapse in" aria-expanded="true" style="position:relative">
                     @using (Html.BeginForm("ThemVaoBang", "NhapSach", FormMethod.Post, new { @class="form-horizontal" }))
@@ -85,7 +81,8 @@
                             <label class="control-label col-lg-4">Nhập Tên Sách</label>
                             <div class="col-lg-4">
                                 @Html.TextBoxFor(m => m.TenSach, new { id = "lbTenSach", @class = "form-control", required = "required" })
-                                @*<input type="hidden" name="MaSach" id="MaSach" />*@
+                                
+                                <!--Thông báo khi để trống textbox mà click nhập-->
                                 <p>@errorMessage</p>
                             </div>
                         </div>
@@ -132,9 +129,10 @@
                                 }
                                 </tbody>
                             </table>
-                        @*<p>@errorMessage2</p>*@
                         </div>
                     <header>
+
+                <!--Phiếu nhập-->
                 <h5>2.Phiếu Nhập</h5>
                 </header>
                     <div class="form-group">
@@ -152,7 +150,6 @@
                     <div class="text-center">
                             <button class="btn btn-success">Lưu</button>
                         </div>
-
                 }
                 </div>
                 <!-- Ket Thuc Tao Phieu Nhap -->

@@ -1,20 +1,26 @@
 ﻿@using PhatHanhSach.Models
 @model IEnumerable<PHIEUNHAP>
+    
+    <!--Sử dụng AdminLayout-->
     @{
         ViewBag.Title = "Index";
         Layout = "~/Views/Layout/AdminLayout.cshtml";
     }
+
+    <!--Nhúng jQuery-->
     <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.10.0.min.js" type="text/javascript"></script>
     <script src="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
     <link href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.9.2/themes/blitzer/jquery-ui.css"
           rel="Stylesheet" type="text/css" />
 
+    <!--Header-->
     <div class="row">
         <div class="col-lg-12">
             <h1 class="page-header">Nhập Sách</h1>
         </div>
     </div>
 
+    <!--Body-->
     <body class="menu-affix">
         <div class="col-lg-12">
             <div class="box inverse">
